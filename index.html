@@ -2,37 +2,161 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>s
-    body {color:rgb(55, 42, 129);
-        background-color: 
-    rgb(0, 0, 0);
-    }
-    p{background-color: aqua;}
-</style>
-</head class=headers" >AMEER</head>BOUDARGHAM
+  <style >
+    *{box-sizing: border-box;
+    margin: 0;
+  padding: 0;}
+  body {padding: 40px;
+  display: grid;}
+  .card {
+        width: 300px;
+        height: 500px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.9);
+      }
 
+      .card__header {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
 
+      .card__image {
+        width: 100%;
+        height: auto;
+        pointer-events: none;
+      }
+
+      .card__content {
+        padding: 16px;
+      }
+
+      .card__title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        position: relative;
+      }
+
+      .card__title::after {
+        content: attr(title);
+        position: absolute;
+        width: 140px;
+        opacity: 0;
+      }
+
+      .card__title:hover::after {
+        opacity: 1;
+      }
+
+      .card__text {
+        font-size: 14px;
+        color: #666666;
+        margin-bottom: 16px;
+      }
+
+      .card__price {
+        font-size: 16px;
+        margin-top: 8px;
+        font-weight: bold;
+      }
+
+      .card__button {
+        text-decoration: none;
+        background-color: #4caf50;
+        padding: 8px 16px;
+        transition: background-color 1s ease;
+      }
+
+      .card__button:hover {
+        background-color: #45a049;
+      }
+
+      .card--dark {
+        background-color: #333333;
+        box-shadow: 1px 4px 8px red;
+        color: #cccccc;
+      }
+
+      .card--dark .card__button {
+        background-color: #1e824c;
+      }
+      .card--dark .card__button:hover {
+        color: #1a6c3d;
+      }
+      #cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+  </style>
+  
+  </head>
   <body>
+    <div id="cards-grid"></div>
+    <div class="card"></div>
+    
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get a reference to the container element
+      var container = document.querySelector('#cards-grid');
 
+      // Number of cards to generate
+      var numberOfCards = 20;
 
-    <header>
-      <div class="logo">Logo</div>
+      // Loop to create and append cards
+      for (var i = 0; i < numberOfCards; i++) {
+        // Create card element
+        var card = document.createElement('div');
+        card.classList.add('card');
 
-      <!-- This is the form of a class: <div class="nav"></div> -->
+        // Create image element
+        var img = document.createElement('img');
+        card.appendChild(img);
 
-      <nav>
-          <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Services</a></li>
-              <li class="flicker-effect"><a href="#">Contact</a></li>
-          </ul>
-      </nav>
-  </header>
+        // Create card content container
+        var content = document.createElement('div');
+
+        // Create heading element
+        var heading = document.createElement('h2');
+        heading.setAttribute('title', 'Card ' + (i + 1));
+        heading.textContent = 'Card ' + (i + 1);
+        content.appendChild(heading);
+
+        // Create price paragraph
+        var price = document.createElement('p');
+        price.textContent = '$' + Math.floor(Math.random() * 100) + 1; // Random price
+        content.appendChild(price);
+
+        // Create description paragraph
+        var description = document.createElement('p');
+        description.textContent = 'Description goes here...';
+        content.appendChild(description);
+
+        // Create "Read More" link
+        var readMore = document.createElement('a');
+        readMore.textContent = 'Read More';
+        content.appendChild(readMore);
+
+        // Append content to card
+        card.appendChild(content);
+
+        // Append card to container
+        container.appendChild(card);
+      }
+    });
+  </script>
+
+    Task: add a script with the logic to populate element corresponding to selector '#cards-grid' with 20 cards -->
+   
   </body>
 </html>
-homework-header.html
-Displaying homework-header.html.
