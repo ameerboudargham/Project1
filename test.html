@@ -1,1 +1,133 @@
-testzz
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #e6f7ff; /* Light blue background */
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header img {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px; /* Adjust the max-height as needed */
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: white; /* White background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        .file-input-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .file-input-button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #1f3a68; /* Dark blue background for the submit button */
+            color: white;
+            cursor: pointer;
+        }
+
+        .file-input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 100px;
+            cursor: pointer;
+            opacity: 0;
+        }
+
+        input[type="submit"] {
+            background-color: #1f3a68; /* Dark blue background for the submit button */
+            color: white; /* White text color for the submit button */
+            cursor: pointer;
+            border: 1px solid #1f3a68; /* Dark blue border for the submit button */
+            border-radius: 4px;
+            padding: 8px 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #143857; /* Darker blue on hover */
+            color: white;
+        }
+
+        /* Add some margin to create separation */
+        .file-input-container,
+        input[type="submit"] {
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images\kidddd.jpg" alt="Logo">
+        <h2>Maintenance Report</h2>
+    </header>
+
+    <form action="#" method="post" id="maintenanceForm" enctype="multipart/form-data">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Your Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+            <option value="Kidney">Kidney Water System </option>
+            <option value="other">other</option>
+        </select>
+
+        <label for="issue">Describe the Maintenance Issue:</label>
+        <textarea id="issue" name="issue" rows="4" required></textarea>
+
+        <div class="file-input-container">
+            <div class="file-input-button" onclick="document.getElementById('image').click()">
+                Select or Take a Photo
+            </div>
+            <input type="file" id="image" name="image" accept="image/*" capture="environment" class="file-input">
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        // You can add JavaScript validation or AJAX submission here
+        document.getElementById('maintenanceForm').addEventListener('submit', function(event) {
+            // Add your validation or submission logic here
+            // Prevent the form from submitting for this example
+            event.preventDefault();
+        });
+    </script>
+</body>
+</html>
