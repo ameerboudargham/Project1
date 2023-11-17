@@ -1,162 +1,198 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  <style >
-    *{box-sizing: border-box;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Card with Image and Button Modifier</title>
+    <style>
+   body {
+    font-family: Arial, sans-serif;
+    background-color: #693a3a;
     margin: 0;
-  padding: 0;}
-  body {padding: 40px;
-  display: grid;}
-  .card {
-        width: 300px;
-        height: 500px;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.9);
-      }
-
-      .card__header {
-        display: flex;
-        justify-content: space-between;
-        padding-top: 8px;
-        padding-bottom: 8px;
-        padding-left: 16px;
-        padding-right: 16px;
-      }
-
-      .card__image {
-        width: 100%;
-        height: auto;
-        pointer-events: none;
-      }
-
-      .card__content {
-        padding: 16px;
-      }
-
-      .card__title {
-        font-size: 16px;
-        font-weight: bold;
-        margin-bottom: 8px;
-        position: relative;
-      }
-
-      .card__title::after {
-        content: attr(title);
-        position: absolute;
-        width: 140px;
-        opacity: 0;
-      }
-
-      .card__title:hover::after {
-        opacity: 1;
-      }
-
-      .card__text {
-        font-size: 14px;
-        color: #666666;
-        margin-bottom: 16px;
-      }
-
-      .card__price {
-        font-size: 16px;
-        margin-top: 8px;
-        font-weight: bold;
-      }
-
-      .card__button {
-        text-decoration: none;
-        background-color: #4caf50;
-        padding: 8px 16px;
-        transition: background-color 1s ease;
-      }
-
-      .card__button:hover {
-        background-color: #45a049;
-      }
-
-      .card--dark {
-        background-color: #333333;
-        box-shadow: 1px 4px 8px red;
-        color: #cccccc;
-      }
-
-      .card--dark .card__button {
-        background-color: #1e824c;
-      }
-      .card--dark .card__button:hover {
-        color: #1a6c3d;
-      }
-      #cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    align-items: center;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 12px;
 }
-  </style>
-  
-  </head>
-  <body>
-    <div id="cards-grid"></div>
-    <div class="card"></div>
-    
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Get a reference to the container element
-      var container = document.querySelector('#cards-grid');
 
-      // Number of cards to generate
-      var numberOfCards = 20;
+.card {
+    width: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #00000077;
+    color: #f0dddd;
+    justify-content: center;
+    text-align: center;
+}
 
-      // Loop to create and append cards
-      for (var i = 0; i < numberOfCards; i++) {
-        // Create card element
-        var card = document.createElement('div');
-        card.classList.add('card');
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #f0e6e6;
+}
 
-        // Create image element
-        var img = document.createElement('img');
-        card.appendChild(img);
+.card-content {
+    padding: 15px;
+}
 
-        // Create card content container
-        var content = document.createElement('div');
+.card-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: #f7f5f5;
+    color: #6b4c4c;
+    text-decoration: none;
+    border: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+}
 
-        // Create heading element
-        var heading = document.createElement('h2');
-        heading.setAttribute('title', 'Card ' + (i + 1));
-        heading.textContent = 'Card ' + (i + 1);
-        content.appendChild(heading);
+.card-button:hover {
+    background-color: #c0b0b0;
+}
 
-        // Create price paragraph
-        var price = document.createElement('p');
-        price.textContent = '$' + Math.floor(Math.random() * 100) + 1; // Random price
-        content.appendChild(price);
+/* Styles for smaller screens */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #693a3a;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 12px;
+}
 
-        // Create description paragraph
-        var description = document.createElement('p');
-        description.textContent = 'Description goes here...';
-        content.appendChild(description);
+.card {
+    width: 140px; /* Adjust the width of each card */
+    height: 160px; /* Adjust the height of each card */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #00000077;
+    color: #f0dddd;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 12px;
+}
 
-        // Create "Read More" link
-        var readMore = document.createElement('a');
-        readMore.textContent = 'Read More';
-        content.appendChild(readMore);
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #f0e6e6;
+}
 
-        // Append content to card
-        card.appendChild(content);
+.card-content {
+    padding: 15px;
+}
 
-        // Append card to container
-        container.appendChild(card);
-      }
-    });
-  </script>
+.card-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: #f7f5f5;
+    color: #6b4c4c;
+    text-decoration: none;
+    border: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+}
 
-    Task: add a script with the logic to populate element corresponding to selector '#cards-grid' with 20 cards -->
-   
-  </body>
+.card-button:hover {
+    background-color: #c0b0b0;
+}
+
+/* Media query for screens with a width of 300px or less */
+@media (max-width: 399px) {
+    .card {
+        width: 100%; /* Make cards full width on smaller screens */
+        margin-right: 0; /* Remove margin to allow cards to stack */
+    }
+    body{background-color: aqua;}
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="images\its-time-to-come-home-phil-koch.jpg" alt="Card Image">
+        <div class="card-content">
+            <h2>Title</h2>
+            <p>This is a dark-themed card with an image and a button modifier.</p>
+        </div>
+        <a href="#" class="card-button">Click me</a>
+    </div>
+    <div class="card">
+      <img src="images\its-time-to-come-home-phil-koch.jpg" alt="Card Image">
+      <div class="card-content">
+          <h2>Title</h2>
+          <p>This is a dark-themed card with an image and a button modifier.</p>
+      </div>
+      <a href="#" class="card-button">Click me</a>
+  </div>
+  <div class="card">
+    <img src="images\its-time-to-come-home-phil-koch.jpg" alt="Card Image">
+    <div class="card-content">
+        <h2>Title</h2>
+        <p>This is a dark-themed card with an image and a button modifier.</p>
+    </div>
+    <a href="#" class="card-button">Click me</a>
+</div>
+<div class="card">
+  <img src="images\its-time-to-come-home-phil-koch.jpg" alt="Card Image">
+  <div class="card-content">
+      <h2>Title</h2>
+      <p>This is a dark-themed card with an image and a button modifier.</p>
+  </div>
+  <a href="#" class="card-button">Click me</a>
+</div>
+<div class="card">
+  <img src="images\its-time-to-come-home-phil-koch.jpg" alt="Card Image">
+  <div class="card-content">
+      <h2>Title</h2>
+      <p>This is a dark-themed card with an image and a button modifier.</p>
+  </div>
+  <a href="#" class="card-button">Click me</a>
+</div>
+<div class="card">
+<img src="images\its-time-to-come-home-phil-koch.jpg" alt="Card Image">
+<div class="card-content">
+    <h2>Title</h2>
+    <p>This is a dark-themed card with an image and a button modifier.</p>
+</div>
+<a href="#" class="card-button">Click me</a>
+</div>
+<div class="card">
+<img src="images\its-time-to-come-home-phil-koch.jpg" alt="Card Image">
+<div class="card-content">
+  <h2>Title</h2>
+  <p>This is a dark-themed card with an image and a button modifier.</p>
+</div>
+<a href="#" class="card-button">Click me</a>
+</div>
+<div class="card">
+<img src="images\its-time-to-come-home-phil-koch.jpg" alt="Card Image">
+<div class="card-content">
+<h2>Title</h2>
+<p>This is a dark-themed card with an image and a button modifier.</p>
+</div>
+<a href="#" class="card-button">Click me</a>
+</div>
+</body>
 </html>
