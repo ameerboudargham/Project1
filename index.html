@@ -3,148 +3,341 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Page</title>
+  <script src="https://kit.fontawesome.com/61ebb60581.js" crossorigin="anonymous"></script>
+  <title>Project 2</title>
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #b8b6b6;
+    *{
+      box-sizing: border-box;
       margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      border-width: 20px;
+      padding: 0;
     }
 
-    .content-container {
-      display: flex;
-      max-width: 1000px;
-      margin: 2px auto;
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
     }
 
-    .left-container {
+    .section1 {
+      background-color: rgb(255, 255, 255);
+      height: 500px;
+      position: relative;
+
+    }
+
+    .section2 {
+      background-color: rgb(255, 255, 255);  
+      height: 600px; 
+    }
+
+    .section3 {
+      background-color: rgb(255, 255, 255);
+      height: 600px;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin-right: 100px;
-      width: 40%;
+    }
+
+
+    .img1 {
+      height: 100%;
+      position: absolute;
+    }
+
+    .img1 img{
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      position: absolute;
+      width: 650px;
+      margin-top: 0px;
+    }
+
+    .textbox1 {
+      position: absolute;
+      margin-left: 800px;
+      width: 500px;
+    }
+
+    .textbox1 p {
+      margin-top: 60px;
+      width: 300px;
+      font-size: 60px;
+      margin-bottom: 30px;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .buttom {
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      color: white;
+      font-size: 15;
+      background-color: black;
+      width: 120px;
+      height: 30px;
+      text-align: center;
+      padding-top: 5px;
+      border-radius: 2px;
+    }
+     
+    header {
+      display: flex;
     }
 
     .logo {
-      max-width: 100%; /* Adjusted the logo width */
-      height: auto;
-      margin-bottom: px; /* Adjusted margin for better spacing */
-      margin-left: -300px;
+      padding: 20px;
+      padding-left: 50px;
+      position: absolute;
+      font-size: 20px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-weight: bold;
     }
 
-    .left-container p {
-      font-size: 25px;
-      text-align:left; /* entered the text */
-      margin-bottom: 10px;
-      margin-top: -30px;
-      margin-left: -150px;
-      
+    .nav ul {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin-left: 722px;
+      position: absolute;
+      margin-bottom: 0;
+
     }
 
-    .login-container {
-      background-color: #fff;
-      padding: 30px; /* Adjusted padding */
-      border-radius: 10px; /* Adjusted border-radius */
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-      text-align: center;
-      width: 60%; /* Adjusted width */
-      position: relative;
-      height: 300px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    input {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 16px;
-      box-sizing: border-box;
-    }
-
-    .blue-button,
-    .white-button,
-    .third-button {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      border-radius: 4px;
+    .nav ul a {
+      font-size: 17px;
+      color: rgb(107, 96, 96);
       cursor: pointer;
-      margin-top: 15px;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-decoration: none;
     }
 
-    .blue-button {
-      background-color: blue;
-      color: #fff;
-      border: none;
+    .section2 .top1{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column ;
     }
 
-    .white-button {
-      background-color: #fff;
-      color: blue;
-      border: 1px solid rgb(255, 255, 255);
-    }
-
-    .third-button {
-      background-color: green;
-      color: white;
-      border: 1px solid green;
+    .section2 .top1 h1 {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 70px;
       margin-top: 50px;
-      border: top 1px;;
-      width: 70%;
-      align-self: center;
-      margin-left: 65px;
+
     }
 
-    .blue-button:hover,
-    .white-button:hover,
-    .third-button:hover {
-      background-color: #bbbbbb;
+    .section2 .top1 p {
+      padding-top: 100px;
+      font-size: 20px;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      color: rgb(107, 96, 96);
     }
 
-    .line-between-buttons {
-      width: 100%;
-      border-top: 1px solid #ccc;
-      margin-top: -80px;
+    .section2 .bottom1 {
+      display: flex;
+      justify-content: center;
+      margin-top: 80px;
+      gap: 60px;
     }
+
+
+    .creative-designers,
+    .ios-developer,
+    .maintainance,
+    .time-management{
+      width: 200px;
+    }
+
+    .section2 .bottom1 img {
+      display: flex;
+      height: 40px;
+      width: 40px;
+      margin: auto;
+    }
+
+    .section2 .bottom1 h1 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      text-align: center;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .section2 .bottom1 p {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      text-align: center;
+      color: rgb(107, 96, 96);
+    } 
+
+    .section3 .right img {
+      height: 100%;
+      margin-left: 80px;
+      width: 600px;
+
+    }
+
+    .section3 .bottom2 img {
+      height: 40px;
+      width: 40px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+
+    .section3 .left {
+      margin-left: 100px;
+    }
+
+    .section3 .top2 h1 {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 60px;
+      width: 450px;
+      margin-top: 50px;
+      margin-bottom: 60px;
+    }
+
+    .section3 .top2 p {
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      margin-bottom: 30px;
+      width: 450px;
+      color: rgb(107, 96, 96);
+    }
+
+    .section3 .bottom2 h1 {
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      width: 300px;
+      margin-bottom: 10px;
+    }
+
+    .section3 .bottom2 p {
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      width: 450px;
+      margin-bottom: 10px;
+      color: rgb(107, 96, 96);
+    }
+
+        /* Style the social media icons */
+    .nav a i {
+      background: none; /* Remove background */
+      border: none; /* Remove border */
+    }
+
+    /* Style the Twitter icon */
+    .nav a[href^="https://twitter.com"] i {
+      color: #1DA1F2; /* Twitter blue */
+    }
+
+    /* Style the Instagram icon */
+    .nav a[href^="https://www.instagram.com"] i {
+      color: #E4405F; /* Instagram pink */
+    }
+
+    /* Style the Facebook icon */
+    .nav a[href^="https://www.facebook.com"] i {
+      color: #1877F2; /* Facebook blue */
+    }
+
   </style>
+
 </head>
+
 <body>
-
-  <div class="content-container">
-    <div class="left-container">
-      <img src="images\facebookjdeeed-removebg-preview.jpg" alt="Logo" class="logo">
-      <p>Facebook helps you connect and share with the people in your life.</p>
+  <section class="section1">
+    <div class="img1">
+      <img src="images\jeraaa.jpeg" alt="Description of the image">
     </div>
 
-    <div class="login-container">
-      <h2></h2>
-      <form action="your_server_side_script.php" method="post">
-          <label for="username"></label>
-          <input type="text" id="username" name="username" placeholder="Email address or phone number" required>
-
-          <label for="password"></label>
-          <input type="password" id="password" name="password" placeholder="Password" required>
-
-          <button class="blue-button" type="submit">Log In</button>
-
-          <!-- Second button (white with blue text) -->
-          <button class="white-button" type="submit">Forgotten Password</button>
-      
-          <!-- Third button with specified margin -->
-          <button class="third-button" type="submit">Create New Account</button>
-      </form>
-      <div class="line-between-buttons"></div>
+    <div class="textbox1">
+      <p> Jeera agency is ready to take your project.</p>
+      <div class="buttom">READ MORE</div>
     </div>
-  </div>
+    
+    <header>
+      <div class="logo">Jera.</div>
+
+      <div class="nav">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact</a></li>
+          <li> <a href="https://twitter.com/example" target="_blank" rel="noopener noreferrer"> <i class="fab fa-twitter-square"></i></a>
+          </li>
+          <li><a href="https://www.instagram.com/example" target="_blank" rel="noopener noreferrer"> <i class="fab fa-instagram-square"></i></a>
+          </li>
+          <li><a href="https://www.facebook.com/example" target="_blank" rel="noopener noreferrer"> <i class="fab fa-facebook-square"></i></a>
+          </p></li>
+          <a href="#">
+            <i class="fas fa-search"></i>
+          </a>
+        </ul>
+      </div>
+
+    </header>
+  </section> 
+  
+  <section class="section2">
+    <div class="top1">
+      <h1 title="title">Our Services.</h1>
+      <p title="text2">Simply dummy text of the printing and typesetting industry.</p>
+    </div>
+
+    <div class="bottom1">
+      <div class="creative-designers">
+        <img src="creative designers.jpeg" alt="Description of the image">
+        <h1>Craetive Designers</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex?</p>
+      </div>
+
+      <div class="ios-developer">
+        <img src="ios developers.jpeg" alt="Description of the image">
+        <h1>iOS Developer</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex?</p>
+      </div>
+
+      <div class="maintainance">
+        <img src="main.jpeg" alt="Description of the image">
+        <h1>Maintenance</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex?</p>
+      </div>
+
+      <div class="time-management">
+        <img src="time.jpeg" alt="Description of the image">
+        <h1>Time Management</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex?</p>
+      </div>
+
+    </div>
+
+
+  </section>
+
+  <section class="section3">
+    <div class="left">
+      <div class="top2">
+        <h1>Our Features.</h1>
+        <p>Simply dummy text of the printing and typesetting industry.</p>
+      </div>
+
+      <div class="bottom2">
+        <div class="technical-solutions">
+          <img src="settings.jpeg" alt="Description of the image">
+          <h1>Technical Solutions</h1>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex?</p>
+        </div>
+  
+        <div class="unlimited-features">
+          <img src="unlimited.jpeg" alt="Description of the image">
+          <h1>Unlimited Features</h1>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex?</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="right">
+      <img src="images\comp.jpeg" alt="Description of the image">
+    </div>
+
+  </section>
 
 </body>
 </html>
